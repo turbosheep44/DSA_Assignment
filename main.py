@@ -3,13 +3,15 @@ import tkinter as tk
 from tkinter import ttk
 import gui.question8 as q8
 
-win = tk.Tk()
-win.title("Python GUI")
+window = tk.Tk()
+window.title("Data Structures and Algorithms")
+window.geometry("800x800+50+50")
 
-tabControl = ttk.Notebook(win)
-tab1 = ttk.Frame(tabControl)
-tab1.pack()
+tabController = ttk.Notebook(window)
+tab = ttk.Frame(tabController)
+tab.pack()
 
-tabControl.add(q8.makeGUI(win), text='Question 8')
-tabControl.pack(expand=1, fill="both")
-win.mainloop()
+tabController.add(q8.makeGUI(window), text='Question 8')
+tabController.pack(expand=1, fill="both")
+
+window.mainloop()

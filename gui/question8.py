@@ -1,4 +1,6 @@
-import .logic.question8 as eight
+
+
+import logic.question8 as eight
 
 import tkinter as tk
 from tkinter import ttk
@@ -23,7 +25,7 @@ def findSqrt(inputField, outputField):
 
     if output[eight.PATTERN_EXISTS]:
         outputField.insert(
-            tk.END, "\n\nStopped early because a pattern was found\n\t")
+            tk.END, "\n\nStopped early because a pattern was found...\n\t")
         outputField.insert(tk.END, str(output[eight.PATTERN]))
 
 
