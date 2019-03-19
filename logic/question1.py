@@ -52,10 +52,45 @@ def quicksort(list, left = 0, right = None):
             quicksort(list, right + 1, extremeRight)
             return
     
-    
 
+# the shell sort algorithm
+def shellsort(list):
+    # separation is number of elements in the actual list between elements in the sublist
+    # the first iteration of the shell sort will contain lists with 2 items
+    separation = len(list) // 2
+
+    while separation > 1:
+        # for any separation value we must sort that number of sub lists where the first 
+        # element of each sub list goes from 0 to n
+        # e.g. for a separation value of 4, we sort 4 sub lists that start from indices 0, 1, 2 and 3
+        for i in range(separation):
+            nSort(list, i, separation)
+        # half the separation value
+        separation = separation // 2
+    
+    # once the separation value reaches one, iterate once more before finishing
+    nSort(list, 0, 1)
 
         
+# performs an insertion sort on a list but only sorts indices that are step elements apart
+# starting from the given start index
+def nSort(list, start, step):
+    shiftPointer = 0
+    # for each index starting from 'start', until the end of the list which are separated by 'step'
+    for i in range(start, len(list), step):
+        # get the current value (that we are inserting)
+        current = list[i]
+
+        # start at the previous position
+        shiftPointer = i - step
+        # repeatedly shift until the program finds a value that is smaller than the current value
+        # or until the program readches an invalid (negative) index
+        while shiftPointer >= 0 and list[shiftPointer] > current:
+            list[shiftPointer + step] = list[shiftPointer]
+            shiftPointer -= step
+        # once we have found a value that is smaller than the current value or reached the 
+        # beginning of the array, put the current value in the previous slot
+        list[shiftPointer + step] = current
 
 
 
@@ -79,8 +114,11 @@ print(a)
 print("--------------- Array B -----------------")
 print(b)
 
+shellsort(a)
 quicksort(b)
 
+print("--------------- Sorted Array A -----------------")
+print(a)
 print("--------------- Sorted Array B -----------------")
 print(b)
 print("Done")
