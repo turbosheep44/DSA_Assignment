@@ -1,4 +1,5 @@
 import random
+import tools
 
 # quicksotrting a partial list
 # if the range of list indices are not defined then use the start and end of the list
@@ -67,12 +68,11 @@ b = []
 
 # populate the arrays with random numbers
 length = random.randint(256, 512)
-for x in range(length):
-    a.append(random.randint(0, 1024))
-
-length = random.randint(256, 512)
-for x in range(length):
-    b.append(random.randint(0, 1024))
+a = tools.randomArray(length=length)
+# length of b is repeatedly randomed until is it distinct from length of a
+while length == len(a):
+    length = random.randint(256, 512)
+b = tools.randomArray(length=length)
 
 print("--------------- Array A -----------------")
 print(a)
