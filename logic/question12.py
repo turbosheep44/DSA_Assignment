@@ -41,7 +41,7 @@ def sumFibonnaci(n):
 
 print("memory efficient")
 print(sumFibonnaci(400))
-print(timeit.timeit(lambda: sumFibonnaci(400), number=1000))
+print(timeit.timeit(lambda: sumFibonnaci(400), number=100000))
 print("alternative")
 print(sumFibonnaciAlt(400))
-print(timeit.timeit(lambda: sumFibonnaciAlt(400), number=1000))
+print(timeit.timeit(lambda: sumFibonnaciAlt(400), number=100000))
