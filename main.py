@@ -12,6 +12,7 @@ tab = ttk.Frame(tabController)
 tab.pack()
 
 tabController.add(q8.makeGUI(window), text='Question 8')
+tabController.add(q8.makeGUI(window), text='Question 8')
 tabController.pack(expand=1, fill="both")
 
 window.mainloop()
