@@ -1,3 +1,4 @@
+import tools
 
 # takes a list of integers to search for the possible 2-pairs with the same product
 def main(l):
@@ -38,5 +39,6 @@ def main(l):
 
 
 # test stub
-l = [9,27,15,8,17,18,18,11,29,30,2,4,24,17,22,26,10,18,3,10]
-print(*main(l), sep="\n")
+array = tools.randomArray(1, 1024, 100)
+print("original array : ", array)
+print(*main(array), sep="\n")
