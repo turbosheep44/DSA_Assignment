@@ -1,0 +1,42 @@
+
+# takes a list of integers to search for the possible 2-pairs with the same product
+def main(l):
+    # remove duplicates in the list 
+
+    # the following operation has a time compelxity of O(n) since iterating over 
+    # a list takes O(n) time and inserting each element in the dictionary takes O(1) time
+    l = list(dict.fromkeys(l))
+    # by removing duplicates from the list we ensure that a≠b≠c≠d holds as long as the 
+    # program doesnt choose the same list index for any two of a, b, c or d in the loops below
+
+    # calculate all possible products and store pairs in hash table
+    # we must calculate every possible pair of integers in the list
+    # this is done with the following nested for loop (time complexity O(n))
+    product = 0
+    pair = None
+    dictionary = {}
+    output = []
+    for i in range(0, len(l)):
+        for j in range(i + 1, len(l)):
+            # multiply the two integers
+            product = l[i] * l[j]
+            # create a tuple from these two integers
+            pair = tuple([l[i], l[j]])
+            # if this product has been found before, then add to the output list new entries 
+            # containing the current pair and every other previous pair found with the same product
+            if product in dictionary:
+                for otherPair in dictionary[product]:
+                    output.append(tuple([pair, otherPair]))
+                # then add the current pair to the dictionary under the same product entry
+                dictionary[product].append(pair)
+            # if this is a new product, then add this entry to the dictionary in a new list
+            else:
+                dictionary[product] = [pair]
+
+    # return the output list 
+    return output
+
+
+# test stub
+l = [9,27,15,8,17,18,18,11,29,30,2,4,24,17,22,26,10,18,3,10]
+print(*main(l), sep="\n")
