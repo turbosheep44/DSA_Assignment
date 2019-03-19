@@ -6,7 +6,7 @@ operations = {
   "-": (lambda x, y: y - x),
   "*": (lambda x, y: x * y),
   "/": (lambda x, y: y / x),
-  # added power operator because the examples of RPN I found 
+  # added power operator because the examples of RPN found 
   # online and used to test had powers
   "^": (lambda x, y: y ** x)
 }
