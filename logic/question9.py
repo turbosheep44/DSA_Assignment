@@ -73,12 +73,12 @@ def mainAlt(list):
 
 import timeit
 
-array = tools.randomArray(length=1000)
+array = tools.randomArray(1, 100, length=1000)
 
-s = timeit.timeit(lambda: main(array))
+s = timeit.timeit(lambda: main(array), number=10000)
 print("Time taken by algorithm A (proposed solution): ")
 print("\t", s)
 
-a = timeit.timeit(lambda: mainAlt(array))
+a = timeit.timeit(lambda: mainAlt(array), number=10000)
 print("Time taken by algorithm B (alternative solution): ")
 print("\t", a)

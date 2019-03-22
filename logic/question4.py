@@ -27,7 +27,7 @@ def main(l):
             # containing the current pair and every other previous pair found with the same product
             if product in dictionary:
                 for otherPair in dictionary[product]:
-                    output.append(tuple([pair, otherPair]))
+                    output.append(tuple([pair, otherPair, product]))
                 # then add the current pair to the dictionary under the same product entry
                 dictionary[product].append(pair)
             # if this is a new product, then add this entry to the dictionary in a new list
@@ -39,6 +39,9 @@ def main(l):
 
 
 # test stub
-array = tools.randomArray(1, 1024, 100)
-print("original array : ", array)
-print(*main(array), sep="\n")
+#array = tools.randomArray(1, 1024, 100)
+#print("original array : ", array)
+#print(*main(array), sep="\n")
+
+import timeit
+print(timeit.timeit(lambda: main([5,28,38,33,18,11,35,13,42,39,47,12,18,34,49,48,1,2,42,28]), number=1000))

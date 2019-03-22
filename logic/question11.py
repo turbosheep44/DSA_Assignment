@@ -51,3 +51,4 @@ def sine(r, n = 150):
 test = 7.7
 print(sine(test))
 print(math.sin(test))
+print(sine(test)-math.sin(test))

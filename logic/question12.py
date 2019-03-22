@@ -7,7 +7,7 @@ def sumFibonnaciAlt(n):
     for x in range(2, n):
         t.append(t[x-1] + t[x-2])
 
-    print(sys.getsizeof(t))
+    #print(sys.getsizeof(t))
     return sum(t)
 
 def sumFibonnaci(n):
@@ -38,14 +38,16 @@ def sumFibonnaci(n):
         # make the current value the new value
         current = new
         
-    print(sys.getsizeof(total))
-    print(sys.getsizeof(current))
-    print(sys.getsizeof(previous))
-    print(sys.getsizeof(new))
+    #print(sys.getsizeof(total))
+    #print(sys.getsizeof(current))
+    #print(sys.getsizeof(previous))
+    #print(sys.getsizeof(new))
     return total
 
 print("memory efficient")
-print(timeit.timeit(lambda: sumFibonnaci(400), number=1))
+print(sumFibonnaci(6000))
+print(timeit.timeit(lambda: sumFibonnaci(4), number=1000))
 print("alternative")
-print(timeit.timeit(lambda: sumFibonnaciAlt(400), number=1))
+print(sumFibonnaciAlt(6000))
+print(timeit.timeit(lambda: sumFibonnaciAlt(6000), number=1000))
 
