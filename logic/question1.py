@@ -1,5 +1,5 @@
 import random
-import tools
+import logic.tools as tools
 
 # quicksotrting a partial list
 # if the range of list indices are not defined then use the start and end of the list
@@ -93,32 +93,15 @@ def nSort(list, start, step):
         list[shiftPointer + step] = current
 
 
+def qTest():
+    a = tools.randomArray(length = 12000)
+    quicksort(a[:])
 
-# seed the random number generator using the system time
-random.seed()
+def sTest():
+    a = tools.randomArray(length = 3000)
+    shellsort(a[:])
 
-# initialise two arrays
-a = []
-b = []
 
-# populate the arrays with random numbers
-length = random.randint(256, 512)
-a = tools.randomArray(length=length)
-# length of b is repeatedly randomed until is it distinct from length of a
-while length == len(a):
-    length = random.randint(256, 512)
-b = tools.randomArray(length=length)
-
-print("--------------- Array A -----------------")
-print(a)
-print("--------------- Array B -----------------")
-print(b)
-
-shellsort(a)
-quicksort(b)
-
-print("--------------- Sorted Array A -----------------")
-print(a)
-print("--------------- Sorted Array B -----------------")
-print(b)
-print("Done")
+import timeit
+print(timeit.timeit(qTest, number=1000))
+print(timeit.timeit(sTest, number=1000))

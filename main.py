@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter import ttk
 import gui.question8 as q8
+import gui.question1 as q1
 
 window = tk.Tk()
 window.title("Data Structures and Algorithms")
@@ -11,7 +12,7 @@ tabController = ttk.Notebook(window)
 tab = ttk.Frame(tabController)
 tab.pack()
 
-tabController.add(q8.makeGUI(window), text='Question 8')
+tabController.add(q1.makeGUI(window), text='Question 1')
 tabController.add(q8.makeGUI(window), text='Question 8')
 tabController.pack(expand=1, fill="both")
 

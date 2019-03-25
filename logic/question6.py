@@ -90,12 +90,12 @@ def sieve(n):
 
 
 
-
 import timeit
 #print(timeit.timeit(firstTenK, number=100)/100)
-primes = sieve(100)
-print(primes)
-print(len(primes))
+print(timeit.timeit(lambda: sieve(10000), number=1))
+
+#print(primes)
+#print(len(primes))
 
 
 
