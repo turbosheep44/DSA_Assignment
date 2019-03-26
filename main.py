@@ -1,6 +1,7 @@
 
 import tkinter as tk
 from tkinter import ttk
+import gui.question10 as q10
 import gui.question9 as q9
 import gui.question8 as q8
 import gui.question7 as q7
@@ -28,6 +29,7 @@ tabController.add(q6.makeGUI(window), text='Question 6')
 tabController.add(q7.makeGUI(window), text='Question 7')
 tabController.add(q8.makeGUI(window), text='Question 8')
 tabController.add(q9.makeGUI(window), text='Question 9')
+tabController.add(q10.makeGUI(window), text='Question 10')
 tabController.pack(expand=1, fill="both")
 
 window.mainloop()
