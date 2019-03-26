@@ -20,6 +20,6 @@ def merge(a, b):
     return r
 
 
-
-c = merge(a, b)
-print(c)
+if __name__ == '__main__':
+    c = merge(a, b)
+    print(c)
