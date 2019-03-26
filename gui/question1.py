@@ -47,7 +47,7 @@ def makeGUI(window):
 
     a_after = tk.Text(root,height=8)
     b_after = tk.Text(root,height=8)
-    info = tk.Text(root)
+    info = tk.Text(root,height=5)
     
     button = tk.Button(root, text="Generate and sort arrays",
                        command=lambda: sort(a_before, a_after, b_before, b_after, info))
