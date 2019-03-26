@@ -43,11 +43,12 @@ def sumFibonnaci(n):
     #print(sys.getsizeof(previous))
     #print(sys.getsizeof(new))
     return total
-
-print("memory efficient")
-print(sumFibonnaci(6000))
-print(timeit.timeit(lambda: sumFibonnaci(4), number=1000))
-print("alternative")
-print(sumFibonnaciAlt(6000))
-print(timeit.timeit(lambda: sumFibonnaciAlt(6000), number=1000))
+    
+if __name__ == '__main__':
+    print("memory efficient")
+    print(sumFibonnaci(6000))
+    print(timeit.timeit(lambda: sumFibonnaci(4), number=1000))
+    print("alternative")
+    print(sumFibonnaciAlt(6000))
+    print(timeit.timeit(lambda: sumFibonnaciAlt(6000), number=1000))
 
