@@ -27,7 +27,7 @@ def reset(outputField, rootNode):
 def makeGUI(window):
     rootNode = Node()
     root = ttk.Frame(window)
-    label = tk.Label(root, text="Enter a number to find the it's square root:")
+    label = tk.Label(root, text="Enter a number to add it to the tree:")
     label.pack()
     inputField = tk.Entry(root)
     inputField.pack()
