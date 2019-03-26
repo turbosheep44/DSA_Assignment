@@ -95,7 +95,7 @@ if __name__ == '__main__':
         # if the user didnt enter -1 then add the value to the tree
         # and then display the tree
         else:
-            print("\n\n\n")
+            print("\n")
             root.addNode(num)
             root.displayToConsole()
         
