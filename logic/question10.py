@@ -1,4 +1,4 @@
-import tools
+
 
 def findLargest(list):
     #   base case
@@ -20,5 +20,6 @@ def findLargest(list):
     else:
         return largest
 
-
-print("the largest number is: ", findLargest(tools.randomArray()))
+if __name__ == '__main__':
+    import tools
+    print("the largest number is: ", findLargest(tools.randomArray()))
