@@ -1,4 +1,7 @@
-import tools
+if __name__ == '__main__':
+    import tools 
+else:
+    import logic.tools as tools
 
 # takes a list of integers to search for the possible 2-pairs with the same product
 def findPairs(l):
