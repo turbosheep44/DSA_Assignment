@@ -1,7 +1,9 @@
 
 
+
 import logic.question1 as one
 import logic.tools as tools
+
 import random
 import timeit
 
@@ -18,7 +20,8 @@ def sort(a_before, a_after, b_before, b_after, info):
     b_before.delete(1.0, tk.END)
     b_before.insert(tk.END, b.__str__())
 
-    print(a)
+    one.quicksort(a)
+    one.shellsort(b)
 
     a_after.delete(1.0, tk.END)
     a_after.insert(tk.END, a.__str__())
