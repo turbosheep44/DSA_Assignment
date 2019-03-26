@@ -29,7 +29,7 @@ def makeGUI(window):
 
     root = ttk.Frame(window)
     
-    tk.Label(root, text="Parameters for random array:").pack(pady=10)
+    tk.Label(root, text="Parameters for series expansion:").pack(pady=10)
     inputFields = tk.Frame(root, height = 50)
     inputFields.pack(fill= tk.X, pady=10)
     tk.Label(inputFields, text="argument in radians: ").pack(side=tk.LEFT)
