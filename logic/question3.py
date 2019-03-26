@@ -11,7 +11,7 @@ def findExtremes(a):
         return extremePoints
 
 if __name__ == '__main__':
-        a = [3, 7, 9, 23, 56, 76, 99, 81, 1243, 6565] 
+        a = [12,19,23,45,64,72,88,95,405,523,662,684] 
         extremes = findExtremes(a)
         for p in extremes:
                 print("extreme point at index :", p)
