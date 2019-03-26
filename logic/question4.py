@@ -38,7 +38,7 @@ def findPairs(l):
                 dictionary[product] = [pair]
 
     # return the output list 
-    print(len(output))
+    #print(len(output))
     return output
 
 
