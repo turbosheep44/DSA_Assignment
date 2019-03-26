@@ -1,7 +1,7 @@
 
-import tools
 
-def main(list):
+
+def getDuplicates(list):
     # create an empty dictionary (hash table) that will store whether or not a variable has been found in the list previously
     dictionary = {}
     # an empty list which will contain all the duplicates in the list
@@ -29,7 +29,7 @@ def main(list):
     return duplicates
 
     
-def mainAlt(list):
+def getDuplicatesAlt(list):
     # create an empty dictionary (hash table) that will store whether or not a variable has been found in the list previously
     dictionary = {}
     # an empty list which will contain all the duplicates in the list
@@ -71,14 +71,16 @@ def mainAlt(list):
 # for a large data set with many duplicates this would makes the program a great deal slower than simply collecting 
 # all the duplicates at the end, which is the implementation of choice above
 
-import timeit
+if __name__ == '__main__':
+    import tools
+    import timeit
 
-array = tools.randomArray(1, 100, length=1000)
+    array = tools.randomArray(1, 100, length=10000)
 
-s = timeit.timeit(lambda: main(array), number=10000)
-print("Time taken by algorithm A (proposed solution): ")
-print("\t", s)
+    s = timeit.timeit(lambda: getDuplicates(array), number=1000)
+    print("Time taken by algorithm A (proposed solution): ")
+    print("\t", s)
 
-a = timeit.timeit(lambda: mainAlt(array), number=10000)
-print("Time taken by algorithm B (alternative solution): ")
-print("\t", a)
+    a = timeit.timeit(lambda: getDuplicatesAlt(array), number=1000)
+    print("Time taken by algorithm B (alternative solution): ")
+    print("\t", a)
