@@ -37,11 +37,17 @@ class Node:
             else:
                 self.left.addNode(value)
 
+    # wrapper class for .display that uses the StringIO class to print all the output to a 
+    # string which is then returned 
     def getDisplayString(self):
+        # create stream
         output = io.StringIO()
+        # call method, passing in stream
         self.display(outputStream=output)
+        # return the contents of the stream i.e. return string with all the prints
         return output.getvalue()
     
+    # wrapper for .display that displays all output to the console
     def displayToConsole(self):
         self.display()
 
