@@ -16,7 +16,7 @@ import gui.question1 as q1
 
 window = tk.Tk()
 window.title("Data Structures and Algorithms")
-window.geometry("800x800+50+50")
+window.geometry("800x600+50+50")
 
 tabController = ttk.Notebook(window)
 tab = ttk.Frame(tabController)
