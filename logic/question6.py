@@ -87,15 +87,14 @@ def sieve(n):
     return primes
 
 
+if __name__ == '__main__':
+    import timeit
+    #print(timeit.timeit(firstTenK, number=100)/100)
+    #print(timeit.timeit(lambda: sieve(10000), number=1))
 
-
-
-import timeit
-#print(timeit.timeit(firstTenK, number=100)/100)
-print(timeit.timeit(lambda: sieve(10000), number=1))
-
-#print(primes)
-#print(len(primes))
+    primes = sieve(1000000)
+    print(primes)
+    print(len(primes))
 
 
 
