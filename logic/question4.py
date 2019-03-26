@@ -1,7 +1,7 @@
 import tools
 
 # takes a list of integers to search for the possible 2-pairs with the same product
-def main(l):
+def findPairs(l):
     # remove duplicates in the list 
 
     # the following operation has a time compelxity of O(n) since iterating over 
@@ -46,4 +46,4 @@ def main(l):
 if __name__ == '__main__':
     import timeit
     array = tools.arrayN(100)
-    print(timeit.timeit(lambda: main(array[:]), number=1))
+    print(timeit.timeit(lambda: findPairs(array[:]), number=1))
