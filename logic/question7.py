@@ -97,7 +97,7 @@ if __name__ == '__main__':
         else:
             print("\n\n\n")
             root.addNode(num)
-            root.getDisplayString()
+            print(root.getDisplayString())
         
     print("finished")
     print("the final binary tree is")
