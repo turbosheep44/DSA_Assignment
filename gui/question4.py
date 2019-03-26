@@ -27,8 +27,9 @@ def makeGUI(window):
 
     root = ttk.Frame(window)
     
+    tk.Label(root, text="Parameters for random array:").pack(pady=10)
     inputFields = tk.Frame(root, height = 50)
-    inputFields.pack(fill= tk.X)
+    inputFields.pack(fill= tk.X, pady=10)
     tk.Label(inputFields, text="maximum: ").pack(side=tk.LEFT)
     maxNumber = tk.Entry(inputFields)
     maxNumber.pack(side=tk.LEFT)
@@ -43,9 +44,9 @@ def makeGUI(window):
 
     button = tk.Button(root, text="Generate array and find pairs",
                        command=lambda: findPairs(int(maxNumber.get()), int(minNumber.get()) ,int(length.get()),  outputField))
-    button.pack()
+    button.pack(pady=10)
 
     tk.Label(root, text="output:").pack()
-    outputField.pack(expand=1, fill=tk.X)
+    outputField.pack(expand=1, fill=tk.X, pady=10)
 
     return root
