@@ -1,4 +1,5 @@
 import random
+import timeit
 import logic.tools as tools
 
 # quicksotrting a partial list
@@ -94,14 +95,13 @@ def nSort(list, start, step):
 
 
 def qTest():
-    a = tools.randomArray(length = 12000)
+    a = tools.randomArray(length = 3000)
     quicksort(a[:])
 
 def sTest():
     a = tools.randomArray(length = 3000)
     shellsort(a[:])
 
-
-import timeit
-print(timeit.timeit(qTest, number=1000))
-print(timeit.timeit(sTest, number=1000))
+if __name__ == '__main__':
+    print(timeit.timeit(qTest, number=10))
+    print(timeit.timeit(sTest, number=10))
