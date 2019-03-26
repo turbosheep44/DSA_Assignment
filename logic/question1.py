@@ -1,6 +1,10 @@
 import random
 import timeit
-import logic.tools as tools
+
+if __name__ == '__main__':
+    import tools 
+else:
+    import logic.tools as tools
 
 # quicksotrting a partial list
 # if the range of list indices are not defined then use the start and end of the list
