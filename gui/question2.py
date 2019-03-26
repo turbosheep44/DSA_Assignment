@@ -35,13 +35,13 @@ def makeGUI(window):
 
     root = ttk.Frame(window)
     tk.Label(root, text="First array (sorted with quicksort):").pack()
-    a = tk.Text(root,height=8)
+    a = tk.Text(root,height=10)
     a.pack(expand=1,fill=tk.X)
     tk.Label(root, text="Secong array (sorted with shellsort):").pack()
-    b = tk.Text(root,height=8)
+    b = tk.Text(root,height=10)
     b.pack(expand=1,fill=tk.X)
 
-    merge = tk.Text(root,height=8)
+    merge = tk.Text(root,height=10)
     
     button = tk.Button(root, text="Generate and sort arrays",
                        command=lambda: sort(a, b, merge))
