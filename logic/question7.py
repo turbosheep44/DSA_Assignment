@@ -82,7 +82,7 @@ if __name__ == '__main__':
     # create the root node
     root = Node(num)
     # display for the first time
-    root.getDisplayString()
+    root.displayToConsole()
 
     # noe repeatedly accept more numbers
     while True:
@@ -97,7 +97,7 @@ if __name__ == '__main__':
         else:
             print("\n\n\n")
             root.addNode(num)
-            print(root.getDisplayString())
+            root.displayToConsole()
         
     print("finished")
     print("the final binary tree is")
