@@ -35,6 +35,7 @@ def main(l):
                 dictionary[product] = [pair]
 
     # return the output list 
+    #print(len(output))
     return output
 
 
@@ -42,6 +43,7 @@ def main(l):
 #array = tools.randomArray(1, 1024, 100)
 #print("original array : ", array)
 #print(*main(array), sep="\n")
-
-import timeit
-print(timeit.timeit(lambda: main([5,28,38,33,18,11,35,13,42,39,47,12,18,34,49,48,1,2,42,28]), number=1000))
+if __name__ == '__main__':
+    import timeit
+    array = tools.randomArray(length=2000)
+    print(timeit.timeit(lambda: main(array[:]), number=1))
