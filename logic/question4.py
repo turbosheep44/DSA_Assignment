@@ -45,5 +45,5 @@ def main(l):
 #print(*main(array), sep="\n")
 if __name__ == '__main__':
     import timeit
-    array = tools.randomArray(length=2000)
+    array = tools.arrayN(100)
     print(timeit.timeit(lambda: main(array[:]), number=1))
