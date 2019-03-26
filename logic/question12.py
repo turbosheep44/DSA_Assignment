@@ -1,5 +1,4 @@
-import timeit
-import sys
+
 
 def sumFibonnaciAlt(n):
     t = [1, 1]
@@ -45,6 +44,8 @@ def sumFibonnaci(n):
     return total
     
 if __name__ == '__main__':
+    import timeit
+    import sys
     print("memory efficient")
     print(sumFibonnaci(6000))
     print(timeit.timeit(lambda: sumFibonnaci(4), number=1000))
