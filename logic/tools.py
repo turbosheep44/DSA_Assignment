@@ -19,3 +19,9 @@ def randomArray(min = 0, max = 1024, length = 256):
 
     # return the new array
     return array
+
+def arrayN(n):
+    r = []
+    for i in range(1, n+1):
+        r.append(i)
+    return r
