@@ -1,6 +1,4 @@
 
-import math
-
 """
     cos(x) = SUMMATION [  {(-1^k)/(2k!)}x^2k  ]
     sin(x) = SUMMATION [  {(-1^k)/(2k+1)!}x^(2k+1)  ]
@@ -48,7 +46,9 @@ def sine(r, n = 150):
     
     return value
 
-test = 7.7
-print(sine(test))
-print(math.sin(test))
-print(sine(test)-math.sin(test))
+if __name__ == '__main__':
+    import math
+    test = 7.7
+    print(sine(test))
+    print(math.sin(test))
+    print(sine(test)-math.sin(test))
