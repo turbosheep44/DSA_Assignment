@@ -92,9 +92,10 @@ if __name__ == '__main__':
     #print(timeit.timeit(firstTenK, number=100)/100)
     #print(timeit.timeit(lambda: sieve(10000), number=1))
 
-    primes = sieve(1000000)
+    primes = sieve(36)
     print(primes)
     print(len(primes))
+    #print(timeit.timeit(lambda: sieve(1000), number=1))
 
 
 
