@@ -18,8 +18,8 @@ def findExtremes(a):
 # a method that prints all extreme points or prints 'sorted' if there are none
 def printExtremes(a):
         # get all the extreme points
-        points = findExtremes(a)
-        
+        extremes = findExtremes(a)
+
         # if there are no extreme points, print that the list is sorted and end here
         if len(extremes) == 0:
                 print("list is sorted")
@@ -32,5 +32,5 @@ def printExtremes(a):
 
 if __name__ == '__main__':
         a = [12,19,23,45,64,72,88,95,405,523,662,684] 
-        extremes = findExtremes(a)
+        printExtremes(a)
         
