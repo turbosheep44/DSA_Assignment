@@ -41,20 +41,6 @@ def findPairs(l):
     #print(len(output))
     return output
 
-def naive(a):
-    output = []
-    for x in range(len(a)):
-        for y in range (x, len(a)):
-            prod = x * y
-            for i in range(len(a)):
-                for j in range (x, len(a)):
-                    prod2 = i  * j
-                    if prod == prod2 and x != i and y != j and a[x]!= a[y] and a[x] != a[i] and a[x] != a[j]:
-                        output.append((x,y,i,j,prod))
-    return output
-
-
-
 # test stub
 #array = tools.randomArray(1, 1024, 100)
 #print("original array : ", array)
@@ -63,11 +49,4 @@ if __name__ == '__main__':
     import timeit
     array = [12,4,5,3,6,8,33,55,11,4,6,78,19,22]
     print(findPairs(array))
-
-    for x in range (50, 101, 10):
-        array = tools.randomArray(min = 1, length=x)
-        print()
-        print(x, " elements in the random array:")
-        print("\tproposed solution:\t",timeit.timeit(lambda: findPairs(array[:]), number=10))
-        print("\tembedded loop approach:\t",timeit.timeit(lambda: naive(array[:]), number=10))
         
