@@ -106,6 +106,17 @@ def sTest():
     a = tools.randomArray(length = 3000)
     shellsort(a[:])
 
+
 if __name__ == '__main__':
-    print(timeit.timeit(qTest, number=10))
-    print(timeit.timeit(sTest, number=10))
+    a = tools.randomArray(length=512)
+    b = a[:]
+    print("\nbefore sorting - quicksort:")
+    print(a)    
+    quicksort(a)
+    print("\nafter sorting - quicksort:")
+    print(a)
+    print("\npython sort:")
+    b.sort()
+    print(b)
+    print("\nmatching result? > " + str(a==b))
+    print()
