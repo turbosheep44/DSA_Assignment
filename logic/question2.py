@@ -41,11 +41,9 @@ def merge(a, b, asc=True):
 if __name__ == '__main__':
     a = [-19,-12,-8,-1,3, 7, 9, 23, 56, 76, 98, 333, 1243]
     b = [-15,-12,-5,-2,2,5, 6, 9, 17, 19, 25, 45, 67, 78]
-    a = [10, 4, 1,-1,-2]
-    b = [15, 7, 3,-7,-14,-22]
     print()
     print(a)
     print(b)
-    c = merge(a, b, False)
+    c = merge(a, b)
     print(c)
     print()
