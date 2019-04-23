@@ -67,7 +67,7 @@ def parseExpression(expression, outputStream = sys.stdout):
 
     # once the whole expression has been evaluated the only remaining item on the stack
     # will be the result
-    print(stack.pop())
+    print("Result >> ", stack.pop(), file=outputStream)
     #if there is still something on the stack then something went wrong
     if len(stack) != 0:
         print("Oh no! It looks like something went wrong. The stack still contains these values:", stack, file=outputStream)
@@ -75,5 +75,8 @@ def parseExpression(expression, outputStream = sys.stdout):
 
 if __name__ == '__main__':
     # test case 
-    expression = "100 5 3 + 4 3 ^ + -  "
+    expression = "9 5 3 + 2 4 ^ - +"
+    print()
+    print(expression)
     parseExpression(expression)
+    print()
