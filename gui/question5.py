@@ -18,7 +18,7 @@ def parseRPN(inputString, outputField):
 def makeGUI(window):
 
     root = ttk.Frame(window)
-    label = tk.Label(root, text="Enter an RPM expression to evaluate, each input value and operator should be separated by a space:")
+    label = tk.Label(root, text="Enter an RPN expression to evaluate, each input value and operator should be separated by a space:")
     label.pack()
     inputField = tk.Entry(root)
     inputField.pack()
