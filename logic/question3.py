@@ -8,7 +8,7 @@ def findExtremes(a):
         # if any point between the first and last element are extreme, add it to the list
         for x in range(1, len(a) - 1):
                 # check for extremeness 
-                if (a[x-1] < a[x] > a[x+1]) or (a[x-1] < a[x] > a[x+1]):
+                if (a[x-1] < a[x] > a[x+1]) or (a[x-1] > a[x] < a[x+1]):
                         # if the point is extreme add it to the list 
                         extremePoints.append(x)
         
@@ -27,8 +27,6 @@ def printExtremes(a):
         # otherwise, print the extreme points
         for p in extremes:
                 print("extreme point at index :", p)
-
-
 
 if __name__ == '__main__':
         a = [12,19,23,45,64,72,88,95,405,523,662,684] 
