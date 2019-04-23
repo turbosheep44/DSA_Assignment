@@ -37,7 +37,7 @@ def makeGUI(window):
     tk.Label(root, text="First array (sorted with quicksort):").pack()
     a = tk.Text(root,height=10)
     a.pack(expand=1,fill=tk.X)
-    tk.Label(root, text="Secong array (sorted with shellsort):").pack()
+    tk.Label(root, text="Second array (sorted with shellsort):").pack()
     b = tk.Text(root,height=10)
     b.pack(expand=1,fill=tk.X)
 
