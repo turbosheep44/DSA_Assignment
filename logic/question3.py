@@ -5,7 +5,7 @@ def findExtremes(a):
         extremePoints = []
 
         for x in range(1, len(a) - 1):
-                if not (a[x-1] < a[x] < a[x+1]):
+                if (a[x-1] < a[x] > a[x+1]) or (a[x-1] < a[x] > a[x+1]):
                         extremePoints.append(x)
 
         return extremePoints
