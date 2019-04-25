@@ -18,7 +18,7 @@ def makeGUI(window):
     inputField = tk.Entry(root)
     inputField.pack()
     outputField = tk.Text(root, height=15, width=100)
-    button = tk.Button(root, text="Find the sum of the first \'n\' fibonnaci numbers", command=lambda: getSum(int(inputField.get()), outputField))
+    button = tk.Button(root, text="Find the sum of the first \'n\' fibonnaci numbers", command=lambda: getSum(float(inputField.get()), outputField))
     button.pack()
     outputField.pack()
 
