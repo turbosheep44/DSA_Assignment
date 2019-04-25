@@ -65,7 +65,7 @@ def sieveOld(n):
     numbers[0] = numbers[1] = False
 
     # iterating through each of the elements in the list 
-    for i in range(len(numbers)):
+    for i in range(n + 1):
         # if the value in the array is still True, then it must be a prime and 
         # so the program will remove all its multiples [1]
         if numbers[i]:
@@ -75,8 +75,8 @@ def sieveOld(n):
 
     # now iterate through the list and collect all the primes in a new array
     primes = []
-    for i in range(len(numbers)):
-        if numbers[i]:
+    for i in range(n + 1):
+        if numbers[i]: 
             # add the primes to the list
             primes.append(i)
 
@@ -86,10 +86,10 @@ def sieveOld(n):
 # however, the syntax is much more pythonic and thus runs approximately twice as fast
 def sieve(n):
     n = abs(int(n))
-    numbers = [True] * n
+    numbers = [True] * (n + 1)
     numbers[0] = numbers[1] = False
 
-    for i in range(2, len(numbers)):
+    for i in range(2, (n + 1)):
         if numbers[i]:
             numbers[i*i::i] = [False] * len(numbers[i*i::i])
 
