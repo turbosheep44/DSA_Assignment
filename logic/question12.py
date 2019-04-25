@@ -27,7 +27,7 @@ def sumFibonnaci(n):
 
     # starting from 2 since we have already set the total to 2 
     # since it is known that the series starts with 1, 1
-    for i in range(2, n):
+    for _ in range(2, n):
         #calculate the next value in the series
         new = current + previous
         # add the new value to the total
@@ -37,10 +37,6 @@ def sumFibonnaci(n):
         # make the current value the new value
         current = new
         
-    #print(sys.getsizeof(total))
-    #print(sys.getsizeof(current))
-    #print(sys.getsizeof(previous))
-    #print(sys.getsizeof(new))
     return total
     
 if __name__ == '__main__':
