@@ -6,11 +6,11 @@ from tkinter import ttk
 
 def primeCheck(number, outputField):
     outputField.delete(1.0, tk.END)
-    outputField.insert(tk.END, str(number) + " is prime:\t" + six.primeCheck(number).__str__())
+    outputField.insert(tk.END, str(abs(int(number))) + " is prime:\t" + six.primeCheck(number).__str__())
 
 def sieve(number, outputField):
     outputField.delete(1.0, tk.END)
-    outputField.insert(tk.END, "Primes up to and including:\t" + str(number) + "\n" + six.sieve(number).__str__())
+    outputField.insert(tk.END, "Primes up to and including:\t" + str(abs(int(number))) + "\n" + six.sieve(number).__str__())
 
 def makeGUI(window):
 
@@ -20,7 +20,7 @@ def makeGUI(window):
     primeInput.pack()
     primeOutput = tk.Text(root, height=3, width=100)
     button = tk.Button(root, text="Prime Check",
-                       command=lambda: primeCheck(int(primeInput.get()), primeOutput))
+                       command=lambda: primeCheck(float(primeInput.get()), primeOutput))
     button.pack()
     primeOutput.pack()
 
@@ -29,7 +29,7 @@ def makeGUI(window):
     sieveInput.pack()
     sieveOutput = tk.Text(root, height=15, width=100)
     button = tk.Button(root, text="Sieve for primes",
-                       command=lambda: sieve(int(sieveInput.get()), sieveOutput))
+                       command=lambda: sieve(float(sieveInput.get()), sieveOutput))
     button.pack()
     sieveOutput.pack()
 
