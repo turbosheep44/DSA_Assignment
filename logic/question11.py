@@ -1,4 +1,4 @@
-
+#a
 """
     cos(x) = SUMMATION [  {(-1^k)/(2k!)}x^2k  ]
     sin(x) = SUMMATION [  {(-1^k)/(2k+1)!}x^(2k+1)  ]
@@ -21,14 +21,6 @@ def cosine(r, n = 150):
 
     # perform n iterations
     for i in range(n):
-        """
-            print(i, ": ", value)
-            print("\t-1 ^ k\t", (-1) ** i)
-            print("\t2k\t", 2 * i)
-            print("\t2k!\t", (factorial(2 * i)))
-            print("\tx ^ 2k\t", (r ** (2 * i)))
-            print((((-1) ** i)/(factorial(2 * i)))*(r ** (2 * i)))
-        """
         # in each iterations add to the current value as per the formula
         value += (((-1) ** i)/(factorial(2 * i)))*(r ** (2 * i))
     
