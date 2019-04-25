@@ -41,7 +41,7 @@ def makeGUI(window):
 
     outputField = tk.Text(root)
 
-    tk.Label(root, text="Warning: for large arguments, suggested > 100 iterations\nfor large arguments and iterations, overflow excepts are common since arg^(2n) gets very big").pack(pady=10)
+    tk.Label(root, text="Suggested > 50 iterations").pack(pady=10)
 
     buttonCosine = tk.Button(root, text="cosine",
                        command=lambda: findPairs(float(argument.get()) ,int(iterations.get()), True,  outputField))
