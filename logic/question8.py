@@ -78,7 +78,7 @@ def patternCheck(list):
     return False
 
 def main(n):
-    # in order to find a good first guess, the program originall would find the smallest square that is
+    # in order to find a good first guess, the program originaly would find the smallest square that is
     # larger than the value we are trying to find using the following loop:
     #   while firstGuess ** 2 < n:
     #       firstGuess += 1
