@@ -65,7 +65,7 @@ def sieve(n):
     # we start by assuming that all the numbers in the range are prime i.e. the element has a value True
     numbers = [True] * (n + 1)
 
-    #t the numbers 0 and 1 are not prime so remove them before starting
+    # the numbers 0 and 1 are not prime so remove them before starting
     numbers[0] = numbers[1] = False
 
     # iterating through each of the elements in the list 
@@ -86,6 +86,16 @@ def sieve(n):
 
     return primes
 
+def sieveBetter(n):
+    numbers = [True] * n
+    numbers[0] = numbers[1] = False
+
+    for i in range(1, len(numbers)):
+        if numbers[i]:
+            numbers[i*i::i] = [False] * len(numbers[i*i::i])
+
+    return [i for i, v in enumerate(numbers) if v]
+
 
 if __name__ == '__main__':
     import timeit
@@ -95,7 +105,8 @@ if __name__ == '__main__':
     primes = sieve(36)
     print(primes)
     print(len(primes))
-    #print(timeit.timeit(lambda: sieve(1000), number=1))
+    print(timeit.timeit(lambda: sieveBetter(10000), number=1000))
+    print(timeit.timeit(lambda: sieve(10000), number=1000))
 
 
 
