@@ -1,6 +1,7 @@
 
 
 def sumFibonnaci(n):
+    n = abs(n)
     # if the user wants the 1st or 2nd element sum we can return them 
     # directly since it is known that the series start with 1, 1
     if n == 1:
@@ -39,7 +40,7 @@ def sumFibonnaciAlt(n):
 
     #print(sys.getsizeof(t))
     return sum(t)
-    
+
 if __name__ == '__main__':
     import timeit
     import sys
