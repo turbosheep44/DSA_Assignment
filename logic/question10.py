@@ -22,4 +22,8 @@ def findLargest(list):
 
 if __name__ == '__main__':
     import tools
-    print("the largest number is: ", findLargest(tools.randomArray()))
+    array = [12,15,16,21,35,21,64,38,65,32,95,54,61,2,4,6,9,35,74]
+    print()
+    print(array)
+    print("the largest number is: ", findLargest(array))
+    print()
