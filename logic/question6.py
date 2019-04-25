@@ -39,12 +39,6 @@ def primeCheck(n):
     # if all divisors up to sqrt(n) are checked and none of them divide n with a remainder 0 then n is prime
     return True
 
-def firstTenK():
-    for i in range(104730):
-        primeCheck(i)
-
-
-
 """
     Optimisations:
     [1] Since every number can be decomposed into its prime factors, the program only needs to 
@@ -59,7 +53,7 @@ def firstTenK():
 """
 
 # the sieve method, where n is the largest number to be checked 
-def sieve(n):
+def sieveOld(n):
     # this is an array of booleans, where the index represents the actual integer being checked
     # and the value represents whether it is a prime number or not
     # we start by assuming that all the numbers in the range are prime i.e. the element has a value True
@@ -86,11 +80,13 @@ def sieve(n):
 
     return primes
 
-def sieveBetter(n):
+# this algorithm uses the same logic as the older version
+# however, the syntax is much more pythonic and thus runs approximately twice as fast
+def sieve(n):
     numbers = [True] * n
     numbers[0] = numbers[1] = False
 
-    for i in range(1, len(numbers)):
+    for i in range(2, len(numbers)):
         if numbers[i]:
             numbers[i*i::i] = [False] * len(numbers[i*i::i])
 
@@ -105,8 +101,8 @@ if __name__ == '__main__':
     primes = sieve(36)
     print(primes)
     print(len(primes))
-    print(timeit.timeit(lambda: sieveBetter(10000), number=1000))
-    print(timeit.timeit(lambda: sieve(10000), number=1000))
+    print(timeit.timeit(lambda: sieveOld(1000), number=1000))
+    print(timeit.timeit(lambda: sieve(1000), number=1000))
 
 
 
