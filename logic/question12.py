@@ -2,6 +2,7 @@
 
 def sumFibonnaci(n):
     n = abs(n)
+    n = int(n)
     # if the user wants the 1st or 2nd element sum we can return them 
     # directly since it is known that the series start with 1, 1
     if n == 1:
