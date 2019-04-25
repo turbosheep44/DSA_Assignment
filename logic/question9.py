@@ -57,30 +57,29 @@ def getDuplicatesAlt(list):
 #       source : https://wiki.python.org/moin/TimeComplexity
 
 
-
-# an alternative implementation would be to use the following if statement in the first for loop and 
-# remove the second for loop altogether
-
-#       if x in dictionary and x not in duplicates:
-#           duplicates.append(x)
-#       else:
-#           dictionary[x] = True
-
-# although this was discarded since then in each iteration of the loop, the 'x not in duplicates' statement
+# this alternative solution was discarded since then in each iteration of the loop, the 'x not in duplicates' statement
 # would iterate through every duplicate that has been found so far with time complexity O(n)
 # for a large data set with many duplicates this would makes the program a great deal slower than simply collecting 
 # all the duplicates at the end, which is the implementation of choice above
 
 if __name__ == '__main__':
-    import tools
-    import timeit
+    #import tools
+    #import timeit
 
-    array = tools.randomArray(1, 100, length=10000)
+    #array = tools.randomArray(1, 100, length=10000)
 
-    s = timeit.timeit(lambda: getDuplicates(array), number=1000)
-    print("Time taken by algorithm A (proposed solution): ")
-    print("\t", s)
+    array = [1,2,3,4,5,6,7,8,9]
+    print()
+    print("input :")
+    print(array)
+    print()
+    print("duplicates found :")
+    print(getDuplicates(array))
+    print()
+    #s = timeit.timeit(lambda: getDuplicates(array), number=1000)
+    #print("Time taken by algorithm A (proposed solution): ")
+    #print("\t", s)
 
-    a = timeit.timeit(lambda: getDuplicatesAlt(array), number=1000)
-    print("Time taken by algorithm B (alternative solution): ")
-    print("\t", a)
+    #a = timeit.timeit(lambda: getDuplicatesAlt(array), number=1000)
+    #print("Time taken by algorithm B (alternative solution): ")
+    #print("\t", a)
