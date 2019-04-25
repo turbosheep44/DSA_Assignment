@@ -14,6 +14,7 @@
 
 
 def primeCheck(n):
+    n = abs(int(n))
     # any number smaller than 2 is not a prime
     # note that 1 ia NOT a prime
     if n < 2:
@@ -54,6 +55,7 @@ def primeCheck(n):
 
 # the sieve method, where n is the largest number to be checked 
 def sieveOld(n):
+    n = abs(int(n))
     # this is an array of booleans, where the index represents the actual integer being checked
     # and the value represents whether it is a prime number or not
     # we start by assuming that all the numbers in the range are prime i.e. the element has a value True
@@ -83,6 +85,7 @@ def sieveOld(n):
 # this algorithm uses the same logic as the older version
 # however, the syntax is much more pythonic and thus runs approximately twice as fast
 def sieve(n):
+    n = abs(int(n))
     numbers = [True] * n
     numbers[0] = numbers[1] = False
 
