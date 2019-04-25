@@ -1,6 +1,4 @@
 
-# 415
-
 # To find the square root of n, we find the value of x that satisfies x^2 = n
 #     =>  0 = x^2 - n
 # Thus we find the value of x for which y is 0 (the root) of the equation
@@ -10,30 +8,28 @@
 #     =>  f'(x) = 2x
 #
 # The newton raphson method uses:
-#     x(n+1) = xn - f(x)/f'(x)
+#     x_(n+1) = x_n - f(x)/f'(x)
 
 # a method to calculate f(x) for any value of x
 
 import math
 
+# varaiables used in the return dictionary
 PATTERN = "pattern"
 PATTERN_EXISTS = "patternFound"
 ITERATIONS = "iterations"
 SOLUTION = "sqrt"
 
+# a method for f(x) i.e. x^2 - n
 def f(x, n):
     return x**2 - n
 
-# a method to calculate f'(x) for any value of x
-
-
+# a method to calculate f'(x) i.e. 2x
 def fPrime(x):
     return 2 * x
 
 # attempts to find some pattern in the list
 # returns true if a pattern is found
-
-
 def patternCheck(list):
     # a list to store the pattern while we are trying to detect a pattern
     pattern = []
@@ -45,7 +41,9 @@ def patternCheck(list):
 
     halfLen = math.ceil(len(list)/2)
 
-    # this loop should continue until we remove half of the list
+    # this loop should continue until we remove half of the list, 
+    #   the loop continues for only half the length since to show that a 
+    #   pattern is present it must repeat at least twice
     # (or it may break when we return from inside the loop)
     while len(list) != halfLen:
         # get the next value in the list
@@ -76,16 +74,17 @@ def patternCheck(list):
                 else:
                     pattern.append(next)
 
+    # if no pattern was found, return false
     return False
 
 def main(n):
-    # in order to find a good first guess, we will find the smallest square that is
+    # in order to find a good first guess, the program will find the smallest square that is
     # larger than the value we are trying to find
     firstGuess = 1
     while firstGuess ** 2 < n:
         firstGuess += 1
 
-    # this is the number of iterations that we have currently done
+    # this is the number of iterations that the program has currently done
     iterations = 0
     # this is the current value of the guess
     x = firstGuess
@@ -102,6 +101,7 @@ def main(n):
     #   we perform 1000 iterations
     #   the exact value is found
     #   the value of x is no longer changing
+    #   a pattern is found
     while iterations < 1000 and x ** 2 != n and not patternCheck(previousValues[:]):
         # use the formula to get the next value of x
         xNext = x - (f(x, n) / fPrime(x))
