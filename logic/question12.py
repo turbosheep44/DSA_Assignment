@@ -1,14 +1,5 @@
 
 
-def sumFibonnaciAlt(n):
-    t = [1, 1]
-
-    for x in range(2, n):
-        t.append(t[x-1] + t[x-2])
-
-    #print(sys.getsizeof(t))
-    return sum(t)
-
 def sumFibonnaci(n):
     # if the user wants the 1st or 2nd element sum we can return them 
     # directly since it is known that the series start with 1, 1
@@ -38,6 +29,16 @@ def sumFibonnaci(n):
         current = new
         
     return total
+    
+# original approach, less memory efficient, same speed
+def sumFibonnaciAlt(n):
+    t = [1, 1]
+
+    for x in range(2, n):
+        t.append(t[x-1] + t[x-2])
+
+    #print(sys.getsizeof(t))
+    return sum(t)
     
 if __name__ == '__main__':
     import timeit
