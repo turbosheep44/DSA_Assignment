@@ -21,6 +21,8 @@ def findPairs(array, outputField):
     pairs = four.findPairs(array)
     for pair in pairs:
         outputField.insert(tk.END, "\n\t" + pair.__str__())
+                
+    outputField.insert(tk.END, "\n\n\nCount: " + str(len(pairs)))
 
 
 def makeGUI(window):
