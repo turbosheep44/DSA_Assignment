@@ -20,6 +20,11 @@ def findPairs(l):
     pair = None
     dictionary = {}
     output = []
+
+    # remove the number 0, problematic because for all numbers, 0 creates a matching product
+    # and violates a != b != c != d
+    l.remove(0)
+
     for i in range(0, len(l)):
         for j in range(i + 1, len(l)):
             # multiply the two integers
