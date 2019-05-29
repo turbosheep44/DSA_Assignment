@@ -1,18 +1,5 @@
 
 
-"""
-    We can eliminate and devisors greater than sqrt(n) since if  a*b = n, and a > sqrt(n) then b < sqrt(b), otherwise a*b > n. 
-    So, by testing all divisors smaller than or equal to sqrt(n), we can eliminate the need to test any divisors greater than sqrt(n), effectively 
-    halving the time taken to check primality.
-
-    Observe that, all primes are of the form 6k ± 1, with the exception of 2 and 3. This is because all integers can be expressed as (6k + i) 
-    for some integer k and for i = −1, 0, 1, 2, 3, or 4; 2 divides (6k + 0), (6k + 2), (6k + 4); and 3 divides (6k + 3). 
-
-    So, a more efficient method is to test if n is divisible by 2 or 3, and if it is not, then to check through all the numbers of form 6k ± 1 
-    This is 3 times as fast as testing divisibility with all numbers less than sqrt(n)
-"""
-
-
 def primeCheck(n):
     n = abs(int(n))
     # any number smaller than 2 is not a prime
